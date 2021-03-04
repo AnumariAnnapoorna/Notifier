@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="login.css">
+
+<script>
+function validate()
+{
+var msg="";
+var email=document.login.email.value;
+var en=new RegExp("[\\w]+.com");
+if(!email.match(en))
+msg+="email should be of form abc@gmail.com";
+if(msg!="")
+{
+alert(msg);
+return false;
+}
+return true;
+}
+</script>
+
+</head>
+<body>
+
+<h2><center>RemindMe</center></h2>
+<center>
+<form action="./Validate" method="post" name="login">
+<table>
+<caption><h3>Login</h3></caption>
+<tr>
+  <div class="container">
+   <td>
+   <input type="text" placeholder="email" name="email" required>
+   </td>
+   </tr>
+   <tr>
+   <td>
+   <input type="password" placeholder="password" name="psw" required>
+   </td>
+   </tr>
+    <tr><td><button type="submit" onclick="return validate()">Login</button></td></tr>
+	<tr><td><span class="psw">Not a member?<a href="SignUp.html">Sign Up</a></span></td></tr>
+  </div>
+  </table>
+</form>
+</center>
+</body>
+</html>
