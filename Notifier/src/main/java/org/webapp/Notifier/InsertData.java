@@ -21,7 +21,7 @@ HttpServletResponse response)
         try {
             Connection con = DatabaseConnection.initializeDatabase(); 
             PreparedStatement st = con 
-                   .prepareStatement("insert into user values(?, ?, ?, ?)"); 
+                   .prepareStatement("insert into user(UserName,PhoneNo,Email,Password) values(?, ?, ?, ?)"); 
             st.setString(1, request.getParameter("uname")); 
   
             st.setString(2, request.getParameter("phno")); 

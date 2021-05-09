@@ -22,32 +22,34 @@ HttpServletResponse response)
     { 
     	PrintWriter out=response.getWriter();
     	HttpSession session=request.getSession(false);
-    	out.println(session);
-    	if(session.getAttribute("email")==null)
-    	{
-    		response.sendRedirect("Login.html");
-    	}
-    	else {
     	String name=(String)session.getAttribute("email");	
     	String password=(String)session.getAttribute("password");	
         try {
             Connection con = DatabaseConnection.initializeDatabase(); 
             PreparedStatement st = con 
-                   .prepareStatement("update user set Username=?,PhoneNo=?,Email=?,Password=? where Email=? and Password=?"); 
+                   .prepareStatement("update user set Username=?,PhoneNo=?,Email=?,Password=? where Email=? and Id=?"); 
             st.setString(1, request.getParameter("uname")); 
   
             st.setString(2, request.getParameter("phno")); 
             
             st.setString(3, request.getParameter("email")); 
             
-            st.setString(4, ""+request.getParameter("psw")); 
+            st.setString(4, request.getParameter("psw")); 
             
             st.setString(5, name); 
             
-            st.setString(6, password); 
+            st.setString(6, (String)session.getAttribute("id")); 
   
-            st.executeUpdate(); 
-            
+            int i=st.executeUpdate(); 
+            out.println(i);
+            if(i>0)
+            {
+            	response.sendRedirect("Login.html");
+            }
+            else
+            {
+            	out.println("fail");
+            }
             st.close(); 
             con.close(); 
         
@@ -56,6 +58,8 @@ HttpServletResponse response)
         catch (Exception e) { 
             e.printStackTrace(); 
         } 
-    	}
-    } 
+    	//}
+    }
+
+	
 } 

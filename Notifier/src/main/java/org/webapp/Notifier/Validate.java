@@ -35,6 +35,8 @@ HttpServletResponse response)
             ResultSet rs=st.executeQuery(); 
             if(rs.next())
             {
+            	session.setAttribute("id",rs.getString(1));
+            	session.setAttribute("name",rs.getString(2));
             	 response.sendRedirect("Dashboard.jsp");
             }
             else

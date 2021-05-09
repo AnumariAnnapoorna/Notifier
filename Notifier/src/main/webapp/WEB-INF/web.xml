@@ -22,6 +22,13 @@
     	<servlet-name>Edituser</servlet-name>
     	<servlet-class>org.webapp.Notifier.Edituser</servlet-class>
     </servlet>
+    <servlet>
+    	<description>
+    	</description>
+    	<display-name>Notesdb</display-name>
+    	<servlet-name>Notesdb</servlet-name>
+    	<servlet-class>org.webapp.Notifier.Notesdb</servlet-class>
+    </servlet>
     <servlet-mapping>
     	<servlet-name>InsertData</servlet-name>
     	<url-pattern>/InsertData</url-pattern>
@@ -34,12 +41,16 @@
     	<servlet-name>Edituser</servlet-name>
     	<url-pattern>/Edituser</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+    	<servlet-name>Notesdb</servlet-name>
+    	<url-pattern>/Notesdb</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>Login.jsp</welcome-file>
         </welcome-file-list>
     </web-app>

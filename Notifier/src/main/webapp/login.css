@@ -2,14 +2,23 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 form {width: 500; border: 2px solid #f1f1f1; background-color:#f1f1f1;}
 input[type=text], input[type=password] {
-  width: 250px;
-  padding: 10px 20px;
-  margin: 5px 0;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
 }
-
+select
+{
+	 width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color:lightgrey;
+}
 button {
   background-color: #4CAF50;
   color: white;
@@ -28,17 +37,46 @@ button:hover {
   padding: 10px;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 30px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; 
+ border: 1px solid #888;
+  width: 80%; 
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0px;
+  color: #000;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
 }
 
 body {
@@ -84,6 +122,23 @@ body {
   padding: 16px;
 }
 
+.addnote
+{
+	position: absolute;
+  top: 16px;
+  right: 190px;
+	padding:16px;
+	color:white;
+}
+.addnotebook
+{
+	position: absolute;
+  top: 16px;
+  right: 120px;
+	padding:16px;
+	color:white;
+}
+
 #signout
 {
 position: absolute;
@@ -115,3 +170,55 @@ position: absolute;
   .sidenav a {font-size: 18px;}
 }
 
+form.example input[type=text] {
+	width:80%;
+	padding:10px;
+	margin:1px 0px;
+  border: 1px solid grey;
+  float: left;
+  background: white;
+}
+
+form.example button {
+	width:15%;
+	padding:10px;
+	margin:1px 0px;
+	height:37px;
+  background: #2196F3;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.leftdiv
+{
+float:left;
+background-color:#F0F3F3;
+padding:10px;
+margin:5px 20px 0px 2px;
+width:15%;
+}
+
+.rightdiv{
+float:left;
+background-color:#F0F3F3;
+padding:10px;
+margin:5px 0px 0px 2px;
+width:80%;
+height:auto;
+}
+
+.notediv{
+	padding:10px;
+	margin:5px 0px 0px 2px;
+	width:90%;
+	background-color:white;
+}
+
+.notification{
+	display:none;
+	width:20px;
+	padding:10px;
+	background-color:white;
+	font-size:25px;
+	cursor:pointer;
+}
