@@ -19,8 +19,8 @@
     </div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>  
+      <label for="uname"><b>NoteBookName</b></label>
+      <input type="text" placeholder="Enter NoteBookName" name="uname" required>  
       <button type="submit">Login</button>
     </div>
 </div>

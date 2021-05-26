@@ -60,7 +60,7 @@ try {
     	    	+"<td>"+rs.getString(7)+"</td>"
     	       	+"</tr>"
     	       	+"</tr>"
-    	       	+"<tr><td><a onclick=fun()>Back</a></b></td>"
+    	       	+"<tr><td><a onclick=fun()><h3 style='color:blue'>Back</h3></a></b></td>"
     	    	+"</tr>"
     	    	+"</table>"
     	    	);
